@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-FROM node:6
+FROM node:12.22.11
 
 RUN npm install -g gitbook-cli
 
