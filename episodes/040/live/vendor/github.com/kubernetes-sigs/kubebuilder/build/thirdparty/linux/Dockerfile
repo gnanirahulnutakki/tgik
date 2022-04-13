@@ -80,5 +80,5 @@ COPY --from=reference-docs-linux /usr/local/kubebuilder/bin/* /usr/local/kubebui
 WORKDIR /usr/local
 RUN tar -czvf /kubebuilder_linux_amd64.tar.gz kubebuilder/
 
-FROM alpine:3.7
+FROM alpine:3.12.12
 COPY --from=linux /kubebuilder_linux_amd64.tar.gz /kubebuilder_linux_amd64.tar.gz
