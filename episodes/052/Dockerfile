@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:1.18-bullseye
 MAINTAINER Kris Nova "knova@heptio.com"
 
 RUN mkdir -p /go/src/github.com/heptio/tgik/episodes/052
