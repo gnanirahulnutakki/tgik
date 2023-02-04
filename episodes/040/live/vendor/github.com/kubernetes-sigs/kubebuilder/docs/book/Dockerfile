@@ -13,6 +13,6 @@
 #  limitations under the License.
 
 
-FROM nginx
+FROM nginx:1.23
 
 COPY _book /usr/share/nginx/html
