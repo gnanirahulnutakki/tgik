@@ -53,7 +53,7 @@ COPY vendor/ vendor/
 RUN go build -a -o installer ./cmd/installer/main.go
 
 # Copy the controller-manager into a thin image
-FROM ubuntu:latest  
+FROM ubuntu:kinetic  
 RUN apt update && apt install openssl -y && apt clean && rm -rf /var/lib/apt/lists/*
 WORKDIR /root/
 COPY --from=builder /go/src/{{ .Repo }}/installer .
@@ -89,7 +89,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o controller-manager ./cm
 RUN go test ./pkg/... ./cmd/...
 
 # Copy the controller-manager into a thin image
-FROM ubuntu:latest
+FROM ubuntu:kinetic
 # RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /go/src/{{ .Repo }}/controller-manager .
